@@ -36,23 +36,48 @@ SimpleRepeatSeq/
 
 ---
 
-## Instalación
+## Instalación local (entorno virtual)
+
+**Requisitos previos:** Python ≥ 3.9, `git`
 
 ```bash
+# 1. Clonar el repositorio
+git clone https://github.com/leandropa00/SimpleRepeatSeq.git
+cd SimpleRepeatSeq
+
+# 2. Crear y activar el entorno virtual
+python3 -m venv .venv
+source .venv/bin/activate          # Linux / macOS
+# .venv\Scripts\activate           # Windows (PowerShell)
+
+# 3. Instalar dependencias
+pip install --upgrade pip
 pip install -r requirements.txt
+
+# 4. Registrar el kernel de Jupyter para este entorno
+python -m ipykernel install --user --name simplerepeatseq --display-name "SimpleRepeatSeq"
 ```
 
-**Dependencias:** Python ≥ 3.9, biopython, numpy, pandas, matplotlib, seaborn, scikit-learn, xgboost, tensorflow ≥ 2.13, scikeras, joblib.
+**Dependencias:** biopython, numpy, pandas, matplotlib, seaborn, scikit-learn, xgboost, tensorflow ≥ 2.13, scikeras, joblib.
 
 ---
 
 ## Uso — Notebooks
 
-1. Coloca `SimpleRepeatSeq_dataset.fasta` en la carpeta `data/`.
-2. Ejecuta `notebooks/01_load_data.ipynb` para generar los encodings (arrays `.npy`).
-3. Ejecuta `notebooks/02_experiments.ipynb` para los experimentos completos.
+```bash
+# Con el entorno virtual activo:
+jupyter notebook
+```
 
-Los notebooks funcionan tanto en **Google Colab** (clona el repo y sube el FASTA a `data/`) como en entorno **local**.
+Abrir en el navegador y ejecutar en orden:
+
+1. `notebooks/01_load_data.ipynb` — carga el FASTA y genera los 6 encodings (arrays `.npy` en `data/encoded/`)
+2. `notebooks/02_experiments.ipynb` — experimentos completos (6 encodings × 3 preprocesadores × 8 modelos), figuras y modelo final
+
+> **Nota:** al abrir cada notebook, seleccionar el kernel **SimpleRepeatSeq** (menú Kernel → Change kernel).  
+> El notebook 02 tarda aproximadamente **15–40 min** dependiendo del hardware.
+
+Los notebooks también son compatibles con **Google Colab**: clonar el repo, subir el FASTA a `data/` y ejecutar las celdas de instalación incluidas al inicio.
 
 ---
 
