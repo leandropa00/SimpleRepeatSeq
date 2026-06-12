@@ -31,3 +31,15 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# LaTeX — artefactos de compilación del artículo (se conservan paper.tex y paper.pdf)
+article/*.aux
+article/*.log
+article/*.out
+article/*.toc
+article/*.bbl
+article/*.blg
+article/*.synctex.gz
+article/*.fls
+article/*.fdb_latexmk
+article/_pg*.png

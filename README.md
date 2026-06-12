@@ -27,7 +27,9 @@ SimpleRepeatSeq/
 ├── models/
 │   └── best_model.pkl                   ← Mejor modelo entrenado (RF + kmer4 + scaled)
 ├── article/
-│   └── paper.pdf                        ← Artículo científico
+│   ├── paper.tex                        ← Fuente LaTeX del artículo
+│   ├── paper.pdf                        ← Artículo (PDF compilado)
+│   └── README_compilar.md               ← Instrucciones de compilación
 ├── classify.py                          ← CLI de clasificación
 ├── requirements.txt
 └── README.md
@@ -112,6 +114,28 @@ ID                                                 Clase predicha       Probabil
 CAG_huntington_007#simpleSeq#210                   simpleSeq                  1.0000
 exon_coding_042#no_simpleSeq#175                   no_simpleSeq               1.0000
 ```
+
+---
+
+## Artículo científico (LaTeX)
+
+El artículo está en `article/paper.tex`; el PDF compilado, en `article/paper.pdf`. El documento usa
+únicamente paquetes LaTeX estándar (no requiere la clase de Oxford), por lo que compila tal cual.
+
+**Opción A — Overleaf (sin instalar nada):** New Project → *Upload Project* → sube `article/` y
+`figures/` manteniendo la estructura → abre `article/paper.tex` → *Recompile* (compilador **pdfLaTeX**).
+
+**Opción B — Local (MiKTeX en Windows, o TeX Live en Linux/macOS):**
+
+```bash
+cd article
+pdflatex -interaction=nonstopmode paper.tex
+pdflatex -interaction=nonstopmode paper.tex   # 2.ª pasada: fija referencias y citas
+```
+
+El PDF se genera en `article/paper.pdf`. Los archivos intermedios (`*.aux`, `*.log`, etc.) están
+ignorados por git. Más detalle y checklist de entrega en
+[`article/README_compilar.md`](article/README_compilar.md).
 
 ---
 
