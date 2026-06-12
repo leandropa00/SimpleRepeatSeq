@@ -20,10 +20,9 @@ El sistema evalúa sistemáticamente **6 encodings × 3 preprocesadores × 8 mod
 SimpleRepeatSeq/
 ├── data/
 │   ├── SimpleRepeatSeq_dataset.fasta    ← coloca el dataset aquí
-│   └── encoded/                         ← arrays .npy generados por notebook 01
-├── notebooks/
-│   ├── 01_load_data.ipynb              ← Carga y generación de encodings
-│   └── 02_experiments.ipynb            ← Experimentos, métricas y figuras
+│   └── encoded/                         ← arrays .npy generados por notebook 01 (commiteados)
+├── 01_load_data_executed.ipynb          ← notebook 01 ejecutado (commiteado con outputs)
+├── 02_experiments_executed.ipynb        ← notebook 02 ejecutado (commiteado con outputs)
 ├── figures/                             ← Figuras generadas automáticamente
 ├── models/
 │   └── best_model.pkl                   ← Mejor modelo entrenado (RF + kmer4 + scaled)
@@ -33,6 +32,8 @@ SimpleRepeatSeq/
 ├── requirements.txt
 └── README.md
 ```
+
+> **Nota sobre reproducibilidad:** los notebooks `*_executed.ipynb` y el directorio `data/encoded/` se incluyen en el repositorio para preservar los resultados sin necesidad de re-ejecutar los experimentos (~15–40 min). Si deseas reproducir los resultados desde cero, ejecuta los notebooks en orden.
 
 ---
 
