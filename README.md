@@ -40,6 +40,11 @@ SimpleRepeatSeq/
 
 **Requisitos previos:** Python ≥ 3.9, `git`
 
+> **Debian/Ubuntu:** si `python3 -m venv` falla con *"ensurepip is not available"*, instala el módulo venv antes de continuar:
+> ```bash
+> sudo apt install python3.12-venv -y
+> ```
+
 ```bash
 # 1. Clonar el repositorio
 git clone https://github.com/leandropa00/SimpleRepeatSeq.git
